@@ -1,0 +1,11 @@
+class Car:
+    def __init__(self,name,color,model):
+        self.name=name
+        self.color=color
+        self.model=model
+    def display(self):
+         print(f"the car is {self.name},color is{self.color}and model is {self.model}")
+car1=Car("Benz","Black",2023)
+car2=Car("BMW","red",2022)
+car1.display()
+car2.display()
