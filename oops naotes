@@ -1,0 +1,124 @@
+Python OOPs Concepts:
+
+Object Oriented Programming:
+
+Python is a multi-paradigm programming language. It supports different programming approaches.
+
+One of the popular approaches to solve a programming problem is by creating objects. This is known as Object-Oriented Programming (OOP).
+
+Object-oriented programming (OOP) is a programming paradigm based on the concept of “objects”. 
+The object contains both data and code: Data in the form of properties (often known as attributes), and code, in the form of methods (actions object can perform).
+
+An object has two characteristics:
+attributes
+behavior
+For example:
+
+A parrot is can be an object,as it has the following properties:
+
+name, age, color as attributes
+singing, dancing as behavior
+The concept of OOP in Python focuses on creating reusable code. This concept is also known as DRY (Don't Repeat Yourself).
+
+In Python, the concept of OOP follows some basic principles:
+
+Class:
+
+In Python, everything is an object. A class is a blueprint for the object. To create an object we require a model or plan or blueprint which is nothing but class.
+We create class to create an object. A class is like an object constructor, or a "blueprint" for creating objects. We instantiate a class to create an object. The class defines attributes and the behavior of the object, while the object, on the other hand, represents the class.
+Class represents the properties (attribute) and action (behavior) of the object. Properties represent variables, and actions are represented by the methods. Hence class contains both variables and methods.
+
+We can think of class as a sketch of a parrot with labels. It contains all the details about the name, colors, size etc. Based on these descriptions, we can study about the parrot. Here, a parrot is an object.
+
+Syntax:
+
+class classname:
+    '''documentation string'''
+    class_suite
+Documentation string: represent a description of the class. It is optional.
+class_suite: class suite contains component statements, variables, methods, functions, attributes.
+The example for class of parrot can be :
+
+class Parrot:
+    pass
+Here, we use the class keyword to define an empty class Parrot. From class, we construct instances. An instance is a specific object created from a particular class.
+
+class Person:
+    pass
+print(Person)
+# Creating a class
+
+class Person:
+    pass
+print(Person)
+<class '__main__.Person'>
+Object
+The physical existence of a class is nothing but an object. In other words, the object is an entity that has a state and behavior.
+
+Therefore, an object (instance) is an instantiation of a class. So, when class is defined, only the description for the object is defined. Therefore, no memory or storage is allocated.
+
+Syntax:
+
+reference_variable = classname()
+The example for object of parrot class can be:
+
+obj = Parrot()
+Here, obj is an object of class Parrot.
+
+Suppose we have details of parrots. Now, we are going to show how to build the class and objects of parrots.
+
+p = Person()
+print(p)
+# Example 1: We can create an object by calling the class
+
+p = Person()
+print(p)
+<__main__.Person object at 0x0000021E45765B20>
+# Example 2: Creating Class and Object in Python
+
+class Student:
+    """This is student class with data"""    
+    def learn(self):    # A sample method
+        print("Welcome to Dr. Milaan Parmar's class on Python Programming")
+
+stud = Student()        # creating object
+stud.learn()            # Calling method
+
+# Output: Welcome to Dr. Milaan Parmar's class on Python Programming
+Welcome to Dr. Milaan Parmar's class on Python Programming
+Class Constructor
+In the examples above, we have created an object from the Person class. However, a class without a constructor is not really useful in real applications. Let us use constructor function to make our class more useful. Like the constructor function in Java or JavaScript, Python has also a built-in __init__() constructor function. The __init__() constructor function has self parameter which is a reference to the current instance of the class.
+
+class Person:
+      def __init__ (self, name):
+        # self allows to attach parameter to the class
+          self.name =name
+
+p = Person('Milaan')
+print(p.name)
+print(p)
+Milaan
+<__main__.Person object at 0x0000021E45765DC0>
+Let us add more parameters to the constructor function.
+
+# Example 1: add more parameters to the constructor function.
+
+class Person:
+      def __init__(self, firstname, lastname, age, country, city):
+            self.firstname = firstname
+            self.lastname = lastname
+            self.age = age
+            self.country = country
+            self.city = city
+
+p = Person('Milaan', 'Parmar', 96, 'England', 'London')
+print(p.firstname)
+print(p.lastname)
+print(p.age)
+print(p.country)
+print(p.city)
+Milaan
+Parmar
+96
+England
+London
