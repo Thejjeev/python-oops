@@ -1,0 +1,41 @@
+class Employee:
+    def __init__(self,id,name,salary,department):
+        self.id=id
+        self.name=name
+        self.salary=salary
+        self.department=department
+    def calculate_salary(self,salary,hours_worked):
+        overtime=0
+        if hours_worked > 50:
+            overtime = hours_worked - 50
+        self.salary = self.salary + (overtime *(self.salary /50))
+    def assign_department(self,emp_department):
+        self.department= emp_department
+    def print_employee_details(self):
+        print("Name: ", self.name)
+        print("id ",self.id)
+        print("salary ", self.salary)
+        print("department ", self.department)
+        print("-----------------")
+employee1=Employee("876","ADAM",50000,"Accounts")
+employee2=Employee(876,"jhon",45000,"sales")
+employee3=Employee(897,"Smith",56666,"Research")
+employee4=Employee(769,"james",7862,"operations")
+print("original employee details:")
+employee1.print_employee_details()
+employee2.print_employee_details()
+employee3.print_employee_details()
+employee4.print_employee_details()
+#change the departments of employee 1 to employee 4
+employee1.assign_department("operations")
+employee4.assign_department("Accounts")
+#overtime salary
+employee2.calculate_salary(45000,56)
+employee3.calculate_salary(56666,59)
+print("updated employee details")
+employee1.print_employee_details()
+employee2.print_employee_details()
+employee3.print_employee_details()
+employee4.print_employee_details()
+
+
