@@ -1,0 +1,51 @@
+class VirtualAssistant:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        print(f"Hello, I'm {self.name}, your virtual assistant.")
+@abstract Method
+    def assist(self, user_query):
+        raise NotImplementedError("Subclasses must implement the assist method.")
+
+class VoiceAssistant(VirtualAssistant):
+    def __init__(self, name, voice_type):
+        super().__init__(name)
+        self.voice_type = voice_type
+
+    def speak(self, message):
+        print(f"{self.name} ({self.voice_type}): {message}")
+
+    def assist(self, user_query):
+        if "weather" in user_query:
+            self.speak("The weather today is sunny.")
+        elif "reminder" in user_query:
+            self.speak("Setting a reminder for tomorrow.")
+        else:
+            self.speak("I'm sorry, I don't understand that command.")
+
+class TextAssistant(VirtualAssistant):
+    def assist(self, user_query):
+        if "weather" in user_query:
+            print(f"{self.name} is providing text-based weather information: The weather today is sunny.")
+        elif "reminder" in user_query:
+            print(f"{self.name} is setting a text-based reminder for tomorrow.")
+        else:
+            print(f"{self.name} is processing a text-based query: I don't understand that command.")
+
+# Example usage
+if __name__ == "__main__":
+    # Create instances of the derived classes
+    voice_assistant = VoiceAssistant("Siri", "Female Voice")
+    text_assistant = TextAssistant("TextSiri")
+
+    # Greet the assistants
+    voice_assistant.greet()
+    text_assistant.greet()
+
+    # Perform assistance
+    user_query = "What's the weather like today?"
+    voice_assistant.assist(user_query)
+
+    user_query = "hjok';l,tomorrow."
+    text_assistant.assist(user_query)
