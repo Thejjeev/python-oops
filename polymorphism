@@ -1,0 +1,30 @@
+class Car:
+    def __init__(self, model):
+        self.model = model
+
+    def drive(self):
+        raise NotImplementedError("Subclasses must implement the drive method")
+
+
+class Sedan(Car):
+    def drive(self):
+        return f"Sedan {self.model} is cruising smoothly"
+
+
+class SUV(Car):
+    def drive(self):
+        return f"SUV {self.model} is handling rough terrains"
+
+
+class Hatchback(Car):
+    def drive(self):
+        return f"Hatchback {self.model} is zipping through the city streets"
+def take_drive(car):
+    return car.drive()
+sedan = Sedan("Camry")
+suv = SUV("Explorer")
+hatchback = Hatchback("Civic")
+
+print(take_drive(sedan))     # Output: Sedan Camry is cruising smoothly
+print(take_drive(suv))        # Output: SUV Explorer is handling rough terrains
+print(take_drive(hatchback))  # Output: Hatchback Civic is zipping through the city streets
